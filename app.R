@@ -30,6 +30,7 @@ server <- function(input, output) {
   story <- eventReactive(input$submit, {
     generate_story(input$noun1, input$verb, input$adjective, input$adverb)
   })
+  cat("This is a message\n")
   output$story <- renderText({
     story()
   })
